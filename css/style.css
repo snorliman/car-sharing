@@ -313,7 +313,7 @@
     margin-left: 16px;
 }
 
-input, textarea {
+input[type="text"], input[type="email"],  textarea {
     border-radius: 8px;
     border: 1px solid var(--grey-2);
     font-family: var(--font-family);
@@ -329,18 +329,18 @@ textarea {
     margin-top: 20px;
     min-height: 140px;
 }
-input::placeholder, textarea::placeholder {
+input[type="text"]::placeholder, input[type="email"]::placeholder, textarea::placeholder {
     color: var(--placeholder-color);
 
 }
 
-input:hover, textarea:hover {
+input[type="text"]:hover, input[type="email"]:hover, textarea:hover {
     background: var(--white-color);
     box-shadow: 0 1px 6px var(--dark-red);
     border: 1px solid var(--red-color);
     opacity: 1;
 }
-input:focus, textarea:focus {
+input[type="text"]:focus, input[type="emial"]:focus, textarea:focus {
     box-shadow: 0 1px 6px var(--dark-red);
     border: 1px solid var(--red-color);
 }
@@ -358,12 +358,13 @@ input:focus, textarea:focus {
     font-size: 10px;
     color: var(--placeholder-color);
     width: 444px;
+    height: 71px;
     margin-top: 20px;
 }
 
 .checkbox span {
     height: 22px;
-    width: 22px;
+    flex-basis: 22px;
     border-radius: 8px;
     border: 1px solid var(--grey-2);
     flex-shrink: 0;
@@ -371,7 +372,9 @@ input:focus, textarea:focus {
     margin-right: 10px;
 }
 .checkbox input:checked + span {
-    background-image: url("/images/Icon Check.svg");
+    background-image: url("../images/Icon Check.svg");
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 button {
@@ -387,11 +390,24 @@ button {
     background-color: var(--white-color);
     align-self: flex-end;
     margin-bottom: 75px;
+    transition: 0.5s;
+}
+button:hover {
+    box-shadow: 0 1px 6px var(--dark-red);
+    border: 1px solid var(--red-color);
+}
+button:active {
+    background-color: var(--black-color);
+}
+button:focus {
+    outline: none;
+    box-shadow: 0 1px 6px var(--dark-red);
+    border: 1px solid var(--red-color);
+
 }
 .footer {
     background-color: var(--black-color);
     color: var(--white-color);
-    height: 232px;
 }
 .bottom_logo {
     font-family: var(--font-family);
@@ -410,6 +426,11 @@ button {
     display: flex;
     justify-content: flex-start;
 }
+
+.footer_content {
+    padding-bottom: 40px;
+}
+
 .footer_link {
     display: flex;
     flex-direction: column;
